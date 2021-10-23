@@ -1,0 +1,25 @@
+.product-card {
+  max-width: 45rem;
+  background-color: #f5f5f5;
+  border-radius: 1rem;
+
+  &__sizes {
+    display: flex;
+    gap: 0.25rem;
+  }
+
+  &__quantity {
+    background-color: map-get($colors, "pink");
+    color: white;
+    border-radius: 0.25rem;
+
+    // Dropdown açıldığında button rengini korur
+    @each $name, $color in $colors {
+      &.show > .btn--#{$name} {
+        background-color: darken($color, 10);
+        border-color: darken($color, 10);
+      }
+    }
+  }
+
+}
